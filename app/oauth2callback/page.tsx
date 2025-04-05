@@ -1,27 +1,38 @@
-'use client'
+// app/oauth2callback/page.tsx
 
-import { useEffect, useState } from 'react'
-import { useSearchParams, useRouter } from 'next/navigation'
+"use client";
 
-export default function OAuth2CallbackPage() {
-  const [message, setMessage] = useState('Processing...')
-  const searchParams = useSearchParams()
-  const router = useRouter()
+import { useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
+
+export default function OAuthCallbackPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <OAuthCallback />
+    </Suspense>
+  );
+}
+
+function OAuthCallback() {
+  const searchParams = useSearchParams();
+  const code = searchParams.get("code");
 
   useEffect(() => {
-    const code = searchParams.get('code')
     if (code) {
+      // Call your FastAPI backend with the code
       fetch(`http://localhost:8000/oauth2callback?code=${code}`)
-        .then(res => res.json())
-        .then(data => {
-          console.log('✅ Token:', data.access_token)
-          localStorage.setItem('google_access_token', data.access_token)
-          setMessage('Login successful! Redirecting to calendar...')
-          setTimeout(() => router.push('/calendar'), 1500)
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("OAuth callback result:", data);
+          // You could store the access_token or redirect here
         })
-        .catch(() => setMessage('❌ Authentication failed.'))
+        .catch((err) => console.error("OAuth callback failed", err));
     }
-  }, [searchParams, router])
+  }, [code]);
 
-  return <p style={{ padding: '2rem' }}>{message}</p>
+  return (
+    <div className="p-10 text-center">
+      <h1 className="text-2xl font-semibold">Authenticating...</h1>
+    </div>
+  );
 }
