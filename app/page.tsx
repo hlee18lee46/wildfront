@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   const handleGoogleLogin = async () => {
-    const res = await fetch("http://localhost:8000/auth-url");
+    const res = await fetch("https://4621-8-28-178-132.ngrok-free.app/auth-url");
     const data = await res.json();
     window.location.href = data.auth_url;
   };

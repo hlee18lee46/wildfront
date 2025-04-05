@@ -20,7 +20,7 @@ function OAuthCallback() {
   useEffect(() => {
     if (code) {
       // Call your FastAPI backend with the code
-      fetch(`http://localhost:8000/oauth2callback?code=${code}`)
+      fetch(`https://4621-8-28-178-132.ngrok-free.app/oauth2callback?code=${code}`)
         .then((res) => res.json())
         .then((data) => {
           console.log("OAuth callback result:", data);
