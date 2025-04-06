@@ -14,6 +14,19 @@ Chatbot: GPT-3.5 via FastAPI backend
 
 State Management: React Hooks + Local Storage
 
+🧰 Frontend Libraries and Tools
+	•	Next.js – React-based framework for server-side rendering and routing
+	•	React – UI library for building interactive user interfaces
+	•	Tailwind CSS – Utility-first CSS framework for styling
+	•	TypeScript – Static typing for JavaScript
+	•	ESLint – Linting tool to maintain code quality
+	•	Prettier – Code formatter for consistency
+	•	Next Auth (or custom OAuth) – Handles user authentication (OAuth2 callback)
+	•	localStorage – Used for storing access_token and user_email on client
+	•	fetch API – For calling backend endpoints like /chat, /tasks, /sms-alert, etc.
+
+ Do npm install to install libraries
+
 🚀 Features
 
 📆 View synced tasks/events from Google Calendar, Outlook, and Canvas
