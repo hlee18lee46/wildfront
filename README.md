@@ -1,3 +1,36 @@
+Sync-a-Life Frontend
+
+This is the frontend of the Sync-a-Life application, built using Next.js (App Router) with TypeScript, Tailwind CSS, and React. It provides a user-friendly interface to interact with tasks, calendars, reminders, and AI chatbot features.
+
+🧰 Tech Stack
+
+Framework: Next.js 14
+
+Styling: Tailwind CSS
+
+Auth/OAuth: Google, Microsoft, Canvas LMS
+
+Chatbot: GPT-3.5 via FastAPI backend
+
+State Management: React Hooks + Local Storage
+
+🚀 Features
+
+📆 View synced tasks/events from Google Calendar, Outlook, and Canvas
+
+🧠 Chatbot interface powered by OpenAI (via FastAPI)
+
+📸 Upload event flyers or handwritten notes to auto-generate tasks
+
+🔔 Update emergency/general alert times for each task
+
+📱 Trigger SMS alerts via backend (email-to-SMS)
+
+Setup
+npm install
+npm run dev
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
